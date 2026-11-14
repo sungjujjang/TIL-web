@@ -4,7 +4,6 @@ import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { SearchDialog } from './components/SearchDialog'
 import { SiteLayout } from './components/SiteLayout'
 import { ListSkeleton } from './components/States'
-import { HomePage } from './pages/HomePage'
 
 const ArchivePage = lazy(() =>
   import('./pages/ArchivePage').then((module) => ({ default: module.ArchivePage })),
@@ -77,7 +76,7 @@ export default function App() {
         <SiteLayout onOpenSearch={() => setSearchOpen(true)}>
           <Suspense fallback={<ListSkeleton />}>
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route path="/" element={<AboutPage />} />
               <Route path="/archive" element={<ArchivePage />} />
               <Route path="/category" element={<CategoryPage />} />
               <Route path="/post" element={<PostPage />} />
