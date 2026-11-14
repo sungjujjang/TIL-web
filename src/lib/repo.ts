@@ -5,8 +5,8 @@ import type { RepoFile, RepoSnapshot } from './types'
 const API = 'https://api.github.com'
 const SNAPSHOT_KEY = 'snapshot'
 const FILE_TTL = 1000 * 60 * 60 * 24
-const BRANCH_TTL = 1000 * 60 * 20
-export const SNAPSHOT_TTL = 1000 * 60 * 20
+const BRANCH_TTL = 1000 * 60 * 3
+export const SNAPSHOT_TTL = 1000 * 60 * 3
 
 const memoryFiles = new Map<string, string>()
 
