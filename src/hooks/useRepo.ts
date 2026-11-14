@@ -18,7 +18,9 @@ export function useSnapshot() {
     staleTime: SNAPSHOT_TTL,
     gcTime: 1000 * 60 * 60 * 3,
     retry: 1,
-    refetchOnWindowFocus: false,
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
+    refetchInterval: SNAPSHOT_TTL,
     initialData: cachedSnapshot?.snapshot,
     initialDataUpdatedAt: cachedSnapshot?.savedAt,
   })
@@ -55,9 +57,9 @@ export function useRepoFile(path: string | null | undefined, ref: string | undef
     queryKey: ['repo-file', ref, path],
     queryFn: () => fetchRepoFile(path!, ref!),
     enabled: Boolean(path && ref),
-    staleTime: 1000 * 60 * 30,
+    staleTime: SNAPSHOT_TTL,
     gcTime: 1000 * 60 * 60 * 6,
     retry: 1,
-    refetchOnWindowFocus: false,
+    refetchOnWindowFocus: true,
   })
 }
