@@ -96,7 +96,7 @@ function MarkdownImage({ src, alt, postPath, refName, onZoom }: MarkdownImagePro
           loading="lazy"
           decoding="async"
           onError={onError}
-          className="max-h-[70svh] w-full object-contain grayscale"
+          className="max-h-[70svh] w-full object-contain"
         />
       </span>
       {showCaption ? (
