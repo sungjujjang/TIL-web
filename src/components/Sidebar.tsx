@@ -11,8 +11,8 @@ interface SidebarProps {
 }
 
 const links = [
+  { to: '/', label: 'README' },
   { to: '/archive', label: '전체 기록' },
-  { to: '/about', label: 'README' },
 ]
 
 export function Sidebar({ onNavigate }: SidebarProps) {
@@ -56,7 +56,10 @@ export function Sidebar({ onNavigate }: SidebarProps) {
     <div className="flex min-h-full flex-col px-4 py-6">
       <nav className="flex flex-col gap-1" aria-label="TIL">
         {links.map((link) => {
-          const active = location.pathname === link.to
+          const active =
+            link.to === '/'
+              ? location.pathname === '/' || location.pathname === '/about'
+              : location.pathname === link.to
           return (
             <Link
               key={link.to}
