@@ -30,7 +30,7 @@ export function Lightbox({ image, onClose }: LightboxProps) {
           <img
             src={image.src}
             alt={image.alt}
-            className="max-h-[94svh] w-auto max-w-[94vw] object-contain grayscale"
+            className="max-h-[94svh] w-auto max-w-[94vw] object-contain"
           />
         ) : null}
       </DialogContent>
